@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.operations.winsky.pulltorecyclerview.MainActivity">
+
+    <Button
+        android:id="@+id/to_listview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="listview下拉" />
+
+    <Button
+        android:text="recycleview下拉"
+        android:id="@+id/to_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null" />
+    <Button
+        android:id="@+id/to_PulltorefushActivity"
+        android:text="PulltorefushActivity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@null" />
+</LinearLayout>
