@@ -49,9 +49,9 @@ public class CommonLoadMoreView extends LoadMoreView implements View.OnClickList
         array.recycle();
 
         LayoutInflater.from(getContext()).inflate(R.layout.default_load_more, this, true);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.gravity = Gravity.CENTER;
-        setLayoutParams(layoutParams);
+//        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+//        layoutParams.gravity = Gravity.CENTER;
+//        setLayoutParams(layoutParams);
         vPages = (ViewFlipper) findViewById(R.id.default_loadmore_flipper);
         vLoading = (LinearLayout) findViewById(R.id.default_loadmore_loading);
         vRetry = (TextView) findViewById(R.id.default_loadmore_retry);

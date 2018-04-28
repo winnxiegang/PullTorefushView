@@ -2,10 +2,12 @@ package adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.operations.winsky.pulltorecyclerview.R;
 import com.operations.winsky.pulltorecyclerview.RecyclerBaseAdapter;
@@ -23,13 +25,14 @@ import butterknife.ButterKnife;
  */
 
 public class PullToRefreshAdapter extends RecyclerBaseAdapter<String> {
-    @Bind(R.id.tv)
-    TextView tv;
-
+    private boolean puurefush;
     public PullToRefreshAdapter(Context context, List<String> list, View header) {
         super(context, list, header);
     }
 
+    public void initData(boolean puurefush) {
+        this.puurefush = puurefush;
+    }
     /**
      * 如果parent传进去为null，生成的View的LayoutParams为null，在RecyclerView.addView时，发现LayoutParams为null，则生成默认的LayoutParams,
      * [java] view plain copy
@@ -58,7 +61,11 @@ public class PullToRefreshAdapter extends RecyclerBaseAdapter<String> {
     @Override
     protected void setData(RecyclerView.ViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
-        viewHolder.titleTv.setText(list.get(position));
+        if (isHeader(0)) {//判断是否有头部 ，假如有 要提前减一
+            viewHolder.titleTv.setText(list.get(position - 1));
+        } else {
+            viewHolder.titleTv.setText(list.get(position));
+        }
     }
 
     public class ViewHolder extends BaseViewHolder {
